@@ -1,0 +1,121 @@
+body {
+    margin:0;
+    display: flex;
+    min-height: 100vh
+}
+.menu {
+    flex-basis: 350px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    background: black;
+    color: white;
+}
+.menu ul {
+    margin: 20px;
+    padding: 30px;
+    list-style: none;
+}
+.menu ul li {
+    padding: 20px 20px 20px 0;
+
+}
+.menu ul li a {
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+    padding: 20px 20px 20px 0;
+}
+.menu ul > li > a:hover {
+    background: darkgray;
+    box-shadow: inset 1px 1px 4px #111;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom, black, gray);
+}
+.content {
+    flex-grow: 1;
+    flex-shrink: 1;
+    background: white;
+    color: black;
+}
+.content > div {
+    display: none;
+}
+.content #main:target {
+     display: block;
+ }
+.content #about:target {
+    display: block;
+}
+.content #contacts:target {
+    display: block;
+}
+a[href*="contacts"]:before {
+    content: "\2709";
+    color: red;
+}
+a[href*="about"]:before {
+    content: "??";
+    color: red;
+}
+a[href*="facebook"]:before {
+    content: "f";
+    text-transform: lowercase;
+    color: red;
+}
+a[href*="facebook"]:after {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAANCAYAAABy6+R8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAExSURBVChThZHNSsNAFIXPTFKlP+mPsYtQEETwRSrotoKborjuVp9Dn6EutEu3FvRZXEmFZvqT0FpNJumdMFariR4YZoZ7P86dM8xt7MX4Q4wxffoSkzv7mZCMY0yjCPwHyG5sJxX6QAyDoLNihUC55qhOmU5X1TourBpcBdH9E8yEHuoNHOZLEDKEbRgIqWtCsBo1FXp0dtE0TYxpvBo3ce0J2jlOSxV4kkDdt5JyaJo5jBTAOPpvPi4nQ0hyMHTPGnRrOzSSRQ4RtqjpKQxwNHxJahvfgkigPK3utoM2PVrIgEYx0F/McTB4VuVfSiDlcF4oQwTvsHOb6M2mK4c08TsCWkUrSUal1PXHaItXXU4XPylYGFEiVUrnfu6j8w+gxJVDmRx6Mw/H7gCL7L/WApbGHW4BelIyBgAAAABJRU5ErkJggg==);
+    text-transform: lowercase;
+    color: red;
+}
+a[href*="main"]:before {
+    content: "\1f3e0";
+    text-transform: lowercase;
+    color: red;
+}
+#main, #about, #contacts {
+    font-family: "Monotype Corsiva";
+    font-size: 30px;
+    padding: 0 1cm 2cm 3cm;
+    text-indent: 1.25cm;
+}
+h1 {
+    text-transform: capitalize;
+    text-shadow: 2px 2px 5px black;
+}
+@media all and (max-width: 1100px) {
+    .menu {
+        flex-basis: 10px;
+     color: black;
+        justify-content: center;
+     }
+    .menu ul li a {
+        color: black;
+    }
+    a[href*="facebook"]:after {
+        content: "";
+    }
+    .menu ul {
+        padding: 0;
+        margin: 0;
+    }
+    .menu ul li {
+        padding: 30px 0 0 0;
+        margin: 0;
+        width: 50px;
+    }
+    .menu ul li a {
+        padding: 0;
+    }
+    .menu ul > li > a:hover {
+        background: black;
+    }
+}
+@media all and (max-width: 500px) {
+    body {
+        flex-direction: column;
+    }
+    .menu ul li {
+        display: inline-block;
+    }
+
+}
